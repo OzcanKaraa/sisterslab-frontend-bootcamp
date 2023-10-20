@@ -15,17 +15,41 @@ const pokemons = [
 //Yukarýdaki dizi içinde bulunan "Water" türündeki Pokemonlarý `filter` kullanarak filtrelemek istiyoruz.
 //Filtreleme iþlemi sonucunda kaç "Water" türündeki Pokemon olduðunu ve bu Pokemon'larýn isimlerini bulmanýz gerekiyor.
 
-console.log(`"Water" türündeki Pokemon sayýsý:  `);
-console.log(`"Water" türündeki Pokemon isimleri: `);
+// "Water" türündeki Pokemon'larý filtrele
+const waterTypePokemons = pokemons.filter(pokemon => pokemon.type === 'Water');
+
+// "Water" türündeki Pokemon sayýsý
+const waterTypeCount = waterTypePokemons.length;
+
+// "Water" türündeki Pokemon isimleri
+const waterTypeNames = waterTypePokemons.map(pokemon => pokemon.name);
+
+console.log(`"Water" türündeki Pokemon sayýsý: ${waterTypeCount}`);
+console.log(`"Water" türündeki Pokemon isimleri: ${waterTypeNames.join(', ')}`);
+
 
 //Yukarýdaki dizide bulunan her bir Pokemon'un deneyim puanýný 2 katýna çýkarmak ve bu iþlem sonucunda yeni bir dizi oluþturmak istiyorsunuz.
 //Bu yeni dizi, her Pokemon'un adýný ve yeni deneyim puanýný içermelidir.
+const doubledExperience = pokemons.map(pokemon => ({
+    name: pokemon.name,
+    experience: pokemon.experience * 2,
+}));
 
 console.log(doubledExperience);
 
 //Pokemon dizisinde, tüm "Water" türündeki Pokemonlar deneyim puanlarýnýn en az 60 olduðu bir koþulu karþýlýyor mu ?
 // Ayrýca, "Fire" türündeki Pokemonlar içinden en az birinin deneyim puaný 70 veya daha fazla mý ?
 // Bu iki koþulu kontrol eden ve sonuçlarý ekrana yazdýran bir kod yazýn.
+
+// Tüm "Water" türündeki Pokemon'lar deneyim puaný en az 60 mý?
+const allWaterPokemonsHighExperience = pokemons
+    .filter(pokemon => pokemon.type === 'Water')
+    .every(pokemon => pokemon.experience >= 60);
+
+// "Fire" türündeki Pokemonlardan en az birinin deneyim puaný 70 veya daha fazla mý?
+const someFirePokemonHighExperience = pokemons
+    .filter(pokemon => pokemon.type === 'Fire')
+    .some(pokemon => pokemon.experience >= 70);
 
 console.log(
     "Tüm 'Water' türündeki Pokemonlar deneyim puaný en az 60 mý?",
@@ -39,10 +63,17 @@ console.log(
 //Pokemon dizisinde bulunan "Electric" türündeki Pokemon'larýn deneyim puanlarýnýn toplamýný
 // kullanarak hesaplamak istiyorsunuz.
 
+const totalElectricExperience = pokemons
+    .filter(pokemon => pokemon.type === 'Electric')
+    .reduce((total, pokemon) => total + pokemon.experience, 0);
+
 console.log(
     "Electric türündeki Pokemon'larýn toplam deneyim puaný: " +
     totalElectricExperience
 );
 
 //Pokemon dizisinde, her türdeki Pokemon'larýn deneyim puanlarýnýn ortalamasýný hesaplamak istiyorsunuz.
+// Her türdeki Pokemon'larýn deneyim puanlarýnýn ortalamasýný hesapla
+
+//???
 console.log(typeExperienceAverages);
