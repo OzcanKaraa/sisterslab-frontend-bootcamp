@@ -1,6 +1,6 @@
 # sisterslab-frontend-bootcamp
 
-# Onerilen Kaynaklar
+# Tavsiye edilen Kaynaklar
 
 ## Kitaplar
 
@@ -36,7 +36,7 @@ https://www.codecademy.com/learn/introduction-to-javascript
 
 https://www.frontendmentor.io/
 
-https://onemonth.com/ --> Student pack ile 1 ay ücretsiz kullanılabilir.
+https://onemonth.com/ --> Student pack ile 1 ay Ã¼cretsiz kullanÃ½labilir.
 
 **Ornek Uygulamalar**
 
@@ -48,7 +48,7 @@ http://jargon.js.org/
 
 **CSS**
 
-Flex-box mantığını oyunlaştırarak öğrenmek için 2 kaynak:
+Flex-box mantÃ½Ã°Ã½nÃ½ oyunlaÃ¾tÃ½rarak Ã¶Ã°renmek iÃ§in 2 kaynak:
 
 https://flexboxfroggy.com/#tr
 
