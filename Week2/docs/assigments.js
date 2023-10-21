@@ -73,7 +73,7 @@ console.log(
 );
 
 //Pokemon dizisinde, her t�rdeki Pokemon'lar�n deneyim puanlar�n�n ortalamas�n� hesaplamak istiyorsunuz.
-// Her t�rdeki Pokemon'lar�n deneyim puanlar�n�n ortalamas�n� hesapla
+// Her t�rdeki Pokemon'lar�n deneyim puanlar�n�n ortalamas�n� hesapla tiplerin karsiliginda ortalamasi 
 
 //???
 console.log(typeExperienceAverages);
