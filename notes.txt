@@ -1,0 +1,6 @@
+React + Vite Kurulum
+npm create vite@latest
+React
+Javascript
+ npm install
+  npm run dev
