@@ -6,5 +6,6 @@ Javascript
   npm run dev
 
 React class companent ve function companent ile olusturuluyor.
-  React Hook 
-  UseState 
+React Hook 
+UseState
+UseEffect
