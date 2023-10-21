@@ -4,3 +4,7 @@ React
 Javascript
  npm install
   npm run dev
+
+React class companent ve function companent ile olusturuluyor.
+  React Hook 
+  UseState 
