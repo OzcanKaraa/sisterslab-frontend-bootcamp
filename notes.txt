@@ -2,10 +2,13 @@ React + Vite Kurulum
 npm create vite@latest
 React
 Javascript
- npm install
-  npm run dev
+npm install
+npm run dev
 
 React class companent ve function companent ile olusturuluyor.
 React Hook 
 UseState
 UseEffect
+
+DOM : Web sayfasinin frontend gosterme.Html-Css kullaniciya gosterme.DOM Depolama.Her guncellemede View dom guncelleme.
+virtual dom react dom baslangici .real dom
