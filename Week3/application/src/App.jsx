@@ -1,9 +1,11 @@
 import React from 'react'
+import Counter from '../companents/Counter'
 
 const App = () => {
   return (
     <div>
-      Counter
+      App
+      <Counter initialCount{10} minCount={-1} maxCount={10}></Counter>
     </div>
   )
 }
