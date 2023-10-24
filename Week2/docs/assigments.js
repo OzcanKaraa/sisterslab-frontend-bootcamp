@@ -16,16 +16,16 @@ const pokemons = [
 //Filtreleme i�lemi sonucunda ka� "Water" t�r�ndeki Pokemon oldu�unu ve bu Pokemon'lar�n isimlerini bulman�z gerekiyor.
 
 // "Water" t�r�ndeki Pokemon'lar� filtrele
-const waterTypePokemons = pokemons.filter(pokemon => pokemon.type === 'Water');
+const waterPokemons = pokemons.filter(pokemon=>pokemon.type === 'Water')
+console.log(waterPokemons)
 
 // "Water" t�r�ndeki Pokemon say�s�
-const waterTypeCount = waterTypePokemons.length;
+const waterPokemons = pokemons.filter(pokemon=>pokemon.type === 'Water')
+console.log(waterPokemons.length)
 
 // "Water" t�r�ndeki Pokemon isimleri
-const waterTypeNames = waterTypePokemons.map(pokemon => pokemon.name);
-
-console.log(`"Water" t�r�ndeki Pokemon say�s�: ${waterTypeCount}`);
-console.log(`"Water" t�r�ndeki Pokemon isimleri: ${waterTypeNames.join(', ')}`);
+const waterPokemonsName = waterPokemons.map(waterPokemons=>name)
+console.log(waterPokemonsName)
 
 
 //Yukar�daki dizide bulunan her bir Pokemon'un deneyim puan�n� 2 kat�na ��karmak ve bu i�lem sonucunda yeni bir dizi olu�turmak istiyorsunuz.

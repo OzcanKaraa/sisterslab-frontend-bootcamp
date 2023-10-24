@@ -15,5 +15,4 @@ DOM : Web sayfasinin frontend gosterme.Html-Css kullaniciya gosterme.DOM Depolam
 virtual dom react dom baslangici .real dom
 
 rafce
-
 React.StrictMode ile 2 sefer konsolda cikti veriyor.
