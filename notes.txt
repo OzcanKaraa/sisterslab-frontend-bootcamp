@@ -20,3 +20,12 @@ CoinFlipper
 
 
 Props:Bir veya birden fazla data parent companent char companent gönderme.companent gönderme sınırlandırması yoktur.
+
+
+Nextj
+
+npx create-next-app@latest
+
+
+
+versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistirme
