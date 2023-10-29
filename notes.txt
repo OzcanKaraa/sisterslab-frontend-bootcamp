@@ -29,3 +29,12 @@ npx create-next-app@latest
 
 
 versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistirme
+ "next": "13.5.6",
+ page nextjs
+
+ sx style
+
+ muı screen sıze  
+ breakpoınt
+
+ muı stack tek yonlu grıd cıft yonlu olarak calısır fark
