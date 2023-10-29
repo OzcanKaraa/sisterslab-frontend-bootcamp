@@ -38,3 +38,5 @@ versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistir
  breakpoınt
 
  muı stack tek yonlu grıd cıft yonlu olarak calısır fark
+
+ div box 
