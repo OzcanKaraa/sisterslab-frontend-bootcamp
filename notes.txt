@@ -23,10 +23,7 @@ Props:Bir veya birden fazla data parent companent char companent gönderme.compa
 
 
 Nextj
-
 npx create-next-app@latest
-
-
 
 versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistirme
  "next": "13.5.6",
@@ -39,4 +36,7 @@ versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistir
 
  muı stack tek yonlu grıd cıft yonlu olarak calısır fark
 
- div box 
+ div box
+
+ axions 
+ mui thema
