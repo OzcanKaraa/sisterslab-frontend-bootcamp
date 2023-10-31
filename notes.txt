@@ -18,7 +18,6 @@ rafce
 React.StrictMode ile 2 sefer konsolda cikti veriyor.
 CoinFlipper
 
-
 Props:Bir veya birden fazla data parent companent char companent gönderme.companent gönderme sınırlandırması yoktur.
 
 
