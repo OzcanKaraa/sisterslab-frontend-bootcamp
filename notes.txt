@@ -20,7 +20,6 @@ CoinFlipper
 
 Props:Bir veya birden fazla data parent companent char companent gönderme.companent gönderme sınırlandırması yoktur.
 
-
 Nextj
 npx create-next-app@latest
 
@@ -33,9 +32,11 @@ versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistir
  muı screen sıze  
  breakpoınt
 
- muı stack tek yonlu grıd cıft yonlu olarak calısır fark
+ muı stack tek yonlu grid cıft yonlu olarak calısır fark
 
  div box
 
  axions 
  mui thema
+
+ npm run dev
