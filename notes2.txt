@@ -1,3 +1,5 @@
 Prptype Prop tanimlama islemleri
 
 development sureclerınde error kapatılır.
+
+stack dir=row olunca yan yana gelir sapcing={2} ile 2 ile carpilir bosluk 16 px sx={(100px)}
