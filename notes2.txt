@@ -16,3 +16,13 @@ sx = size
         )}
 
  Loading kosullu olarak yazildi Kod tekrarini onlemek icin Skeleton component olarak yazilabilir. Her yerde kullanilabilir.
+  
+  Skeleton
+  variant="rectangular"
+          animation="wawe" //hep ayni kullanilir.
+          width={300}
+          height={150}
+Loading true oldugunda render olmasi.False ise render islemi gerceklesmese
+
+
+ <IsSkeleton>Children olarak gonderildgii icin CHILDREN kapsama islemi icerisindeki kisim companent olarak yazilir. </IsSkeleton>

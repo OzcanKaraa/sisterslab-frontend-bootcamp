@@ -6,10 +6,10 @@ import {
   CardContent,
   CardMedia,
   IconButton,
+  Skeleton,
   Typography,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import IsSkeleton from "./IsSkeleton";
 
 const InfoCard = ({
   character, //karakter geldiginde verileri gosterir.
@@ -20,27 +20,43 @@ const InfoCard = ({
 }) => {
   return (
     <Card key={character.id} sx={{ width: "150px" }}>
-      <IsSkeleton loading={loading} width={150} height={140}>
-        <CardMedia
+   
+      {loading ? (
+        // true ?
+        <Skeleton
+          variant="rectangular"
+          animation="wawe"
+          width={300}
+          height={150}
+        />
+      ) : (
+        //skeleton calismasi icin true olmasi gerekiyor.
+        <CardMedia //false oldugunda render olur.
           component="img"
           alt="character"
           height="140"
           image={character.image}
         />
-      </IsSkeleton>
+      )}
 
       <CardContent>
-        <IsSkeleton loading={true} width="80%">
+        {loading ? (
+          //true?
+          <Skeleton width="80%" />
+        ) : (
           <Typography variant="h5" component="div">
             {character.name}
           </Typography>
-        </IsSkeleton>
+        )}
 
-        <IsSkeleton loading={true} width="60%">
+        {loading ? (
+          //true ?
+          <Skeleton width="60%" /> //true ise
+        ) : (
           <Typography variant="body2" color="text.secondary">
             {character.gender} {character.status}
           </Typography>
-        </IsSkeleton>
+        )}
       </CardContent>
 
       <CardActions>
@@ -48,11 +64,13 @@ const InfoCard = ({
           aria-label="add to favorites"
           onClick={() => handleFavoriteToggle(character.id)}
         >
-          <IsSkeleton loading={true} variant="circular" width={30}>
+          {loading ? (
+            <Skeleton varıant="circular" />
+          ) : (
             <FavoriteIcon
               color={isFavorite(character.id) ? "error" : "disabled"}
             />
-          </IsSkeleton>
+          )}
         </IconButton>
 
         <Button
@@ -60,9 +78,12 @@ const InfoCard = ({
           variant="text"
           onClick={() => handleClick(character.id)}
         >
-          <IsSkeleton loading={true} width="100px">
+          {loading ? (
+            //  true?
+            <Skeleton width="100px" />
+          ) : (
             "Learn More"
-          </IsSkeleton>
+          )}
         </Button>
       </CardActions>
     </Card>
