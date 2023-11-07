@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchCharacters } from '../api';
-import { Stack, TextField } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select, Stack, TextField } from '@mui/material';
 import { useRouter } from 'next/router';
 import InfoCard from '@/components/InfoCard';
 
@@ -10,11 +10,23 @@ const Characters = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const[searchBy,setSearchBy] = useState('name');
 
   const getCharacters = async () => {
     const characters = await fetchCharacters();
     setCharacters(characters);
   };
+
+const fetchCharacterData = async() =>{
+  let characterList = [];
+  if(searchText){
+    characterList = await fetchCharacterData(SearchText,searchBy);
+  }else{
+    characterList = await fetchCharacters();
+    setCharacters(characterList);
+  }
+};
+
 
   useEffect(() => {
     getCharacters();
@@ -57,15 +69,32 @@ const Characters = () => {
   const isFavorite = (id) => favorites.includes(id);
   return (
     <Stack spacing={2}>
+      <Stack direction="row" spacing={2} >
+      <FormControl size="small" sx= {{widht:'100px'}}>
+  <InputLabel id="demo-simple-select-label">Search By</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={searchBy}
+    label="Age"
+    onChange={(e) => setSearchBy(e.target.value)}
+  >
+    <MenuItem value='name'>Name</MenuItem>
+    <MenuItem value='status'>Status</MenuItem>
+    <MenuItem value='species'>Species</MenuItem>
+  </Select>
+</FormControl>
+     
       <TextField
         label="Search"
         variant="outlined"
         size="small"
         fullWidth
-        placeholder="Search by name, status, gender"
+        placeholder="Enter search text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
+       </Stack>
       <Stack
         spacing={{ xs: 1, sm: 2 }}
         direction="row"

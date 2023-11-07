@@ -19,3 +19,12 @@ export const fetchCharacter = async (id) => {
   const response = await axiosInstance.get(`/character/${id}`);
   return response.data;
 };
+
+export const fetchCharacterWithSearch = async (searchTerm,searchBy)=>{
+  const response = await axiosInstance.get(
+    `/character/?${searchBy}=${searchTerm}`
+  );
+  if(response.data&response.data.result){
+    return response.data.result;
+  }
+};

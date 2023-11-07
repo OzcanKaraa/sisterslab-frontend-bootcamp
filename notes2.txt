@@ -26,3 +26,9 @@ Loading true oldugunda render olmasi.False ise render islemi gerceklesmese
 
 
  <IsSkeleton>Children olarak gonderildgii icin CHILDREN kapsama islemi icerisindeki kisim companent olarak yazilir. </IsSkeleton>
+
+ search islemi filter ile.
+
+ <stack directon="row"> yan yana gelir.
+
+ <Stack direction="row" spacing={2} >
