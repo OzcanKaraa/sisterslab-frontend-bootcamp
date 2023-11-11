@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Week5",
+    "\\Week5\\docs",
+    "\\Week5\\docs\\Next-Project",
+    "\\Week5\\docs\\Next-Project\\pokemonapp"
   ],
-  "SelectedNode": "\\C:\\Users\\ozcan\\OneDrive\\Masaüstü\\Frontend Bootcamp",
+  "SelectedNode": "\\Week5\\docs\\Next-Project\\pokemonapp\\public",
   "PreviewInSolutionExplorer": false
 }
