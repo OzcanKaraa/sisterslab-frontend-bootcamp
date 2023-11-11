@@ -32,3 +32,5 @@ Loading true oldugunda render olmasi.False ise render islemi gerceklesmese
  <stack directon="row"> yan yana gelir.
 
  <Stack direction="row" spacing={2} >
+
+ useMemo cok maliyetli react hooks
