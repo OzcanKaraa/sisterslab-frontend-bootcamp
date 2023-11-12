@@ -1,4 +1,4 @@
-Prptype Prop tanimlama islemleri
+Proptype Prop tanimlama islemleri
 
 development sureclerınde error kapatılır.
 
