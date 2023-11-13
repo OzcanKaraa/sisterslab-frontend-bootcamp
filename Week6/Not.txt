@@ -1,0 +1,28 @@
+useMemo:
+--------------------------------------
+Nerede kullanacagim 
+Bir değeri hesaplayarak cachte saklama için kullanılır.Bu hesaplama genellikle değeri dönüştürme işlemi filtreleme gibi işlemi içerir.Geriye dönüş değeri de hesaplanmış sonucun kendisi olur.Counter örneğinde sadece counta göre değiştiği zaman dönen değeri caschte saklanır.Cachete saklanan deger normal sayfada her sayfa render oldugunda deger her zaman tekrar hesaplanacak.useMemo hook kullanıldıgında tekrar render olmayıp cachte devam edecek count degıstıgı noktada tekrar render olacak.
+
+Kullanım senaryolarında :useMemo hesaplama maliyeti yuksek islemler icin kullanilir.Listelerin filtrelenmesi donusturulmesi gibi ozel islemlerde kullanilir.
+
+Listelerin filtrelenmesi donusturulmesi filter ile yapilir cok buyuk datalarda kullanilir.
+
+
+------------------------------------------------------------------------------------------------------
+useMemo useCallBack farki : bir tarafta deger return ederken diger tarafta fonksiyonu cache onbellege alinir.useMemo da degeri tutarken diger tarafta useCallBackte ise fonksiyon tutulur.
+
+useCallBack: onksiyonu cache onbellege alinir.Callback degeri cache alinan fonksiyonun kendisi.FONKSIYON DEGERINI TUTAR.Fonksiyonun surekli calisip calismamasi onune geçilir.Referansları değişmemesi degerler oluyor özellikle companentin tekrar render edilmemesini önlemek için kullanılır.
+
+----------------------------------------------------------------------------------------------------------
+Hangi hook belirlemek icin hangi adimlar izlenmeli? fonksiyonda useMemo useCallBack nasil karar verilir?
+api istek sayfa ilk render oldugunda useeffect icerisinde depence degeri verilirse?Id ye gore atilirsa?
+
+usememo islemi useeffect ile yapilabilir mi?
+
+buyuk data projelerde kullanilan fonksiyon eger sayfa crash olup patlarsa optimize etmek gerekiyor.Optimize ederken nelere dikkat edilir?Onemli olan fonksiyon mu dondugu deger mi?
+
+-------------------------------------------------------------------------------------------------
+React Memo:Memorization olayi
+
+
+crash olma:sayfa cokmesi beyaz sayfa gozukmesi
