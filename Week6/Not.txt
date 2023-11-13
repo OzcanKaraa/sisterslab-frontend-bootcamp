@@ -21,6 +21,7 @@ usememo islemi useeffect ile yapilabilir mi?
 
 buyuk data projelerde kullanilan fonksiyon eger sayfa crash olup patlarsa optimize etmek gerekiyor.Optimize ederken nelere dikkat edilir?Onemli olan fonksiyon mu dondugu deger mi?
 
+
 -------------------------------------------------------------------------------------------------
 React Memo:Memorization olayi
 
