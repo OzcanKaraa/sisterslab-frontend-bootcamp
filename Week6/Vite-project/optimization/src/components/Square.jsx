@@ -10,7 +10,7 @@ import { useMemo, useState } from "react"
         return number*number
     },[number]);
     
-   /*const squareFunc = ()=>{                //2.yol useMemo kullanmadan
+   /*const squareFunc = ()=>{                
     console.log('Karekok hesaplandi.')
     return number*number
    }
