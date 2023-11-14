@@ -1,15 +1,20 @@
 import { useMemo, useState } from "react"
 
-//usememo ile uslu sayılar hesaplama
 
     const Square = () => {
     const [number,setNumber] = useState(0);
     const [inc,setInc] = useState(0);
-    const squareFunc = useMemo(()=>{
-        console.log('Kare Hesaplandi..')
+  
+    const squareFunc = useMemo(()=>{        //1.usememo ile uslu sayılar hesaplama
+        console.log('Karekok Hesaplandi...')
         return number*number
     },[number]);
-
+    
+   /*const squareFunc = ()=>{                //2.yol useMemo kullanmadan
+    console.log('Karekok hesaplandi.')
+    return number*number
+   }
+   */
 
   return (
     <div>
