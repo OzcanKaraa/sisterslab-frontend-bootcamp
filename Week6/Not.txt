@@ -57,6 +57,10 @@ javascript
  yarn                            --node module yukleme
  yarn dev                        --uygulama calistirma
 
+ prep?
 
+Hook : iletilen sıkca güncellenen fonksiyonları optimize etmek için kullanılır.Bagımlıklıklar degısmedıgı surece fonksıyonun yenıden olusturmasını onler.
 
+Effect callback memo depence bagli oldugu modullere gore calismasini saglar hepsi icin ortak.Ozellikle child companentler alt companentleri alt companentler props olarak gecen yada referans esitliligi onemli olan durumlarda 
+gereksiz renderlari engellemeye yardimci olur.
  
