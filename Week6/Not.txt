@@ -1,6 +1,11 @@
 useMemo:
 --------------------------------------
 Nerede kullanacagim 
+Hesaplama maliyeti cok yuksek olan islemleri optimize etmek icin kullanilir.Kucuk ıslemlerde kullanılmaması tavsıye edılır.Render olmamasını saglar.counter ıse usememo kullanma render maliyeti dusuktur.Usememo kullanılarak malıyetı artırılır.
+
+Belirli girdiler değişmediği sürece depence değişmediği sürece degerın yenıden hesaplanmasını onler.Aynı propslarla aynı girdilerle tekrar tekrar aynı hesaplamanın yapılmasını engeller.Performans artısı saglanır.
+
+
 Bir değeri hesaplayarak cachte saklama için kullanılır.Bu hesaplama genellikle değeri dönüştürme işlemi filtreleme gibi işlemi içerir.Geriye dönüş değeri de hesaplanmış sonucun kendisi olur.Counter örneğinde sadece counta göre değiştiği zaman dönen değeri caschte saklanır.Cachete saklanan deger normal sayfada her sayfa render oldugunda deger her zaman tekrar hesaplanacak.useMemo hook kullanıldıgında tekrar render olmayıp cachte devam edecek count degıstıgı noktada tekrar render olacak.
 
 useMemo bir deger hesaplama return etme ise kullanilir.
@@ -8,17 +13,13 @@ useMemo bir deger hesaplama return etme ise kullanilir.
 Kullanım senaryolarında :useMemo hesaplama maliyeti yuksek islemler icin kullanilir.Listelerin filtrelenmesi donusturulmesi gibi ozel islemlerde kullanilir.
 
 Listelerin filtrelenmesi donusturulmesi filter ile yapilir cok buyuk datalarda kullanilir.
-
-
 ------------------------------------------------------------------------------------------------------
 useMemo useCallBack farki : bir tarafta deger return ederken diger tarafta fonksiyonu cache onbellege alinir.useMemo da degeri tutarken diger tarafta useCallBackte ise fonksiyon tutulur.
-
-
+------------------------------------------------------------------------------------------------------
 useCallBack: onksiyonu cache onbellege alinir.Callback degeri cache alinan fonksiyonun kendisi.FONKSIYON DEGERINI TUTAR.Fonksiyonun surekli calisip calismamasi onune geçilir.Referansları değişmemesi degerler oluyor özellikle companentin tekrar render edilmemesini önlemek için kullanılır.Optimize islemler gerceklestirir.Fonksiyon durmadan calismasi.
 Fonksiyonun referansini cachleeme icin useCallback
 
 Her iki fonksiyonda kullanilabilir.
-
 ----------------------------------------------------------------------------------------------------------
 Hangi hook belirlemek icin hangi adimlar izlenmeli? fonksiyonda useMemo useCallBack nasil karar verilir?
 api istek sayfa ilk render oldugunda useeffect icerisinde depence degeri verilirse?Id ye gore atilirsa?
@@ -47,8 +48,15 @@ Profiler render suresi.
 ----------------------------
 
 Vite Projesi olusturma
-npm install -g yarn
+npm install -g yarn              --yarn kurulum
 yarn create vite    
 project-name : example-app 
 react
 javascript 
+ npm install -g pnpm              -- pnpm kurulum
+ yarn                            --node module yukleme
+ yarn dev                        --uygulama calistirma
+
+
+
+ 
