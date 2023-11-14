@@ -24,4 +24,3 @@ import { useMemo, useState } from "react"
 }
 
 export default Square
-
