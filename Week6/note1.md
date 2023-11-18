@@ -63,4 +63,17 @@ Hook : iletilen sıkca güncellenen fonksiyonları optimize etmek için kullanı
 
 Effect callback memo depence bagli oldugu modullere gore calismasini saglar hepsi icin ortak.Ozellikle child companentler alt companentleri alt companentler props olarak gecen yada referans esitliligi onemli olan durumlarda 
 gereksiz renderlari engellemeye yardimci olur.
+--------------------------------------------------------------------------------------------------
+reactMemo : Higher-Order companent companentlerin gereksiz yere yeniden render edilmesini onune gecmek icin.Performans optimizasyonda konusunda ihtiyaca gore verilen kosulu saglanmadiginda yada yanlis calisabilme problem oldugunda kullanilir.
+
+Render olmamasi icin efect kullanilabilir condition bagli tutulur condition saglanmadigi surece companentin onune gecilebilir.
+Kullanmak ekstra maliyet.
+--------------------------------------------------------------------------------------------------
+react next js kullanirken state kullanilir mutate etmemeye calisilir Javascriptin array fonksiyonlari kullanilir.Javascriptin array fonksiyonlarinda mutate olmayanlar dikkate alinir.ornek Push kullanilir.
+Genel mantik Dont Mut State olan yerde Push kullanmak dogru degildir.Performansa bagli olarak veri kaybina yol acabilir.
+
+Memo kavrami cok kritik problemli bir durum kullanmak icin kullanilabilir senaryolarda daha verimli olur.
+
+setState gore degisim
+ 
  
