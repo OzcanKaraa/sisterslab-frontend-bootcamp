@@ -38,3 +38,7 @@ versiyonlari degistirme  icin npm mopdule silip package.json sayfasinda degistir
  axions 
  mui thema
  
+
+npx create-next-app@13.5.6
+
+// npm i -g create-next-app  next js version guncellenebilir.
