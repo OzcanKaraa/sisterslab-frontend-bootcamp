@@ -1,0 +1,62 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Sapiens: İnsan Türünün Kısa Bir Tarihi",
+            "author": "Yuval Noah Harari",
+            "price": 35.99,
+            "currency": "TRY",
+            "description": "Sapiens, insan türünün tarihini kapsamlı bir şekilde ele alan etkileyici bir kitaptır.",
+            "imageurl": "https://example.com/sapiens.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Dune",
+            "author": "Frank Herbert",
+            "price": 45.99,
+            "currency": "TRY",
+            "description": "Dune, bilim kurgu tarihinde önemli bir yer tutan epik bir roman serisidir.",
+            "imageurl": "https://example.com/dune.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Harry Potter and the Sorcerer's Stone",
+            "author": "J.K. Rowling",
+            "price": 25.99,
+            "currency": "TRY",
+            "description": "Harry Potter serisinin ilk kitabı, sihirli bir dünyaya giriş yapmanın heyecanını sunar.",
+            "imageurl": "https://example.com/harry_potter.jpg"
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    }
+}
+
+Resources
+  http://localhost:3001/books
+  http://localhost:3001/posts
+  http://localhost:3001/comments
+  http://localhost:3001/profile
+
+  Home
+  http://localhost:3001
+
+  localhost third part olarak kurmaya restapi kurmaya sagladi.
+  resource ile ulasilabiliyor
+
+  //Response Result Data dbjson dosyasi 
