@@ -97,7 +97,8 @@ Disarida yazilan state todo list icerisine Push edilir.
 action payload icerisine yazip gonderilecek data array item olarak eklenir.
 
 -----------------------------------------------------------------
-useDispatch
+useDispatch()
+ 
 
 
 
