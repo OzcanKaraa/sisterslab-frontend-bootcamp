@@ -50,3 +50,74 @@ Redux store actions gönderildiğinde kök reducer çalıştır.Aksiyon alma nok
 -----------------------------------------------------------------
 Provider COMPONENT İle benzer uygulama nasıl yapılır.
 
+Provider ile uygulamayı sarma.
+Provider import etttiktyen sonra store folder olması gerekiyor 
+redux toolki yapılacak tüm işlemler store içerisinde olmalı.
+redux folder olusturmus altına store yazmıs ve import etmiş
+
+App çevreisini provider ile sarıyoruz store gönderme işlemi 
+store bütün state tutulacak işlemler 
+store ile işlem yapıldıgında herhangi bir sayfa içerisinde durmadan prop passing yapmamıza gerek olmayacak.
+4 katmanlı sayfa oldugunu varsayarsak birinci katmandan dördüncü katmana propları teker teker indiriliyordu iki ara katman prop ile bağımsızdı.
+Store ile birinci katmanda kullandıgımız prop aradaki iki katmanı geçerek en alttaki katmana ulaştırlablecek.
+1.katman veriyi store gönderme 4.companent store gidiliyor istediği bilgiyi alıp çekebilir.Bu şekilde prop passıng ve props drilling önüne geçiriliyor.
+
+configureStore()
+store konfigurasyonu islemi gerceklestirir.
+configureStore() key var 1 tane store olusturuluyor store icerisine configureStore() keywordu import edilir todo icin reducer olusturmus olusturacagimiz slice ya da reducer store icerisinde export default configure store icerisine reducer hangi islemleri yapacagimiza gore ornegin todo icin reducer import edilir.
+
+createSlice()
+todo reducer import edilen createSlice() ile beraber olusturulur.Redux toolkit icerisinden dosyanin altina import edilir.
+todo islemi gerceklestirirken state ile olusturuluyor add delete update CRUD islemleri gerceklestiriliyordu createSlice() ile bu islemlerin bu aksiyonlarin tamamnini create SLice icerisinde todo slice icerisinde yapilacak. 
+
+syntax olarak ;
+
+export const todoSlice = createSlice({
+  name: "todos",
+  initialState: { //state 
+    todoList: [], //ilk state bos array
+  },
+  reducers: { //aksiyonlar
+    addTodo: (state, action) => {  //State onChange veri setTodo ile guncelleme islemi 
+    //reducer icerinde action olusturulup action icerisinde state tutulup state action gosterme 
+      //Update State //update islemi 
+    },
+  },
+});
+
+export const { addTodo } = todoSlice.actions; //kullanmak istedigimiz fonksiyonu todoSlice actions icerisinden export edilir.Distract edilir
+todo Slice icerisinden addTodo Distract edip disariya export edilir.
+
+​
+export default todoSlice.reducer;  
+
+-----------------------------------------------------------------
+Add Todo Reducer
+Disarida yazilan state todo list icerisine Push edilir.
+action payload icerisine yazip gonderilecek data array item olarak eklenir.
+
+-----------------------------------------------------------------
+useDispatch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
