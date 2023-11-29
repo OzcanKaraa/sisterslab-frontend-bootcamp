@@ -49,3 +49,4 @@ Bır reducer pass ederek geçirerek store olustur.Store kısımları reducerlı 
 Redux store actions gönderildiğinde kök reducer çalıştır.Aksiyon alma noktasında reducer dispact ederek içerisindeki aksiyonları çalışmasını sağlar.
 -----------------------------------------------------------------
 Provider COMPONENT İle benzer uygulama nasıl yapılır.
+
