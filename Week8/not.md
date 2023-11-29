@@ -97,21 +97,100 @@ Disarida yazilan state todo list icerisine Push edilir.
 action payload icerisine yazip gonderilecek data array item olarak eklenir.
 
 -----------------------------------------------------------------
-useDispatch()
+Normalde  yaptigimiz useDispatch() fonksiyonu 
  
+Normalde 
+
+EKLEME ISLEMLERINI SYNTAX OLARAK KULLANILIR.
+
+import React, { useState } from "react";
+import { Button, Input } from "@chakra-ui/core";
+​
+export default function AddTodo() {
+  const [value, setValue] = useState(""); //state 
+​
+  const handleChange = (event) => 
+    setValue(event.target.value);
+​
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+​
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input value={value} onChange={handleChange} /> //input girerek handleChange ile Value setleme islemi gerceklestiriliyor.
+      <Button onClick={handleSubmit}>Add</Button> //Button onclick ile istek atma.
+    </form>
+  );
+}
 
 
 
 
+useDispatch() 
+Redux toolkit icerisinde useDispact() fonksiyonu redux icerisinde cekilir todo aksiyon var export edilen iceri gonderdim.
+dispact fonksiyonu const 
+
+const dispatch = useDispatch(); olarak alinir.
 
 
+import React, { useState } from "react";
+import { useDispatch } from "react-redux"; //import etme
+import { Button, Input } from "@chakra-ui/core";
+import { addTodo } from "../../redux/slices/todoSlice"; //addTodo todoSlice import etme islemi
 
+const dispatch = useDispatch(); //import olarak eklenen dispact fonksiyonunu tanitma.
+​
+  const handleChange = (event) => //set islemi gerceklestirilen value onchange icerisine eklenir.AddTodo fonksiyonu icerisine eklenir ve Dispact yardimi ile todo slice icerisindeki state Dispact edilir gonderilir.
 
+  handleSubmit icerisinde yaptigimiz isleme gore slice icerisinde olusturulan add todo fonksiyonu icerisine value gonderilip store kaydedebilmek icin store dogru gonderebilmek icin Dispact basina yazilir ve yazilan store kaydedilmis olur.
+    setValue(event.target.value);
+​
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addTodo(value));
+    setValue("");
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input value={value} onChange={handleChange} />
+      <Button onClick={handleSubmit}>Add</Button>
+    </form>
+  );
+-----------------------------------------------------------------
 
+Let's see if it's working.properly En son hali su sekilde 
 
+-----------------------------------------------------------------
+Payload kismi
+iceriye gonderilen add todo 
+prepare hazirla 
+id veya farkli sekilde tutulmasi icin prepare callback value ile return edilir payload icerisinde key value seklinde 
+yeni obje olusturur Nano ID eklemis redux ID olusturma mekanizmasi.id yerine Uid Unique id deger date now ile fonksiyonu js de gercek projelerde kullanilmaz ama surekli id yazmak yaratmak uid kullanmak third party eklemek istenmiyorsa date now kullanilabilir date now ile tarih/saat/sn deger alan uniqe deger olarak kullanilabilir.
 
+Prepare kismi aslinda iceriye gonderilen value nasil state kaydetmek istedigimizle alakali 
+nanoid redux toolkit icerisinde eklenmis.
 
-
+ reducers: {
+    addTodo: {
+      reducer: (state, action) => {
+        state.todoList.push(action.payload);
+      },
+      prepare(value) {
+        return {
+          payload: {
+            key: nanoid(),
+            value: value,
+          },
+        };
+      },
+    },
+  },
+});
+​
+export const { addTodo } = todoSlice.actions;
+​
+export default todoSlice.reducer;
 
 
 
