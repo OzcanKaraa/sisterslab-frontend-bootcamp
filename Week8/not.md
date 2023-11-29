@@ -191,11 +191,70 @@ nanoid redux toolkit icerisinde eklenmis.
 export const { addTodo } = todoSlice.actions;
 export default todoSlice.reducer;
 
-24.00
 
+Update Redux State  
+-------------------------------------------
+useSelector()
 
+INPUT Deger yazildi degeri addTodo fonksiyonuyla yeni state eklendi.Ama yeni state eklenen bir yerde kullanmadik.
 
+Eski hali syntax
+todolist data var map fonksiyonu ile kolayca sekilde gosteriliyor.
 
+import React from "react";
+import { Box, Text } from "@chakra-ui/core";
+​
+export default function TodoList() {
+  const todoListdata = [
+    {
+      key: "unique id",
+      value: "Do the Redux Toolkit Talk",
+    },
+  ];
+​
+  return (
+    <>
+      {todoListdata.map((todo) => (
+        <Box key={todo.key}>
+          <Text>{todo.value}</Text>
+        </Box>
+      ))}
+    </>
+  );
+----------------------------------------------------------------------------------------
+
+Bu islemleri redux tarafindan store cekmek icin useSelector fonksiyonu kullanilacak.
+
+yeni syntax
+
+todoList data array var.Array icine todolist gonderilecek.
+En basta reducer icerisindeki tanimlanan initial state olarak listeyi todo list data bir tane value degerine esitlenir.
+Store data ulasabilmek icin :
+useSelector icerisinde state  todos todolist value degerini esitle.
+State icerisindeki todolarin todo listleri getir ve todo list dataya ekle.
+
+useSelector en basit mantigi store olan state ulasabilmek.Map islemi ile ulasabilmek.
+
+export default function TodoList() {
+
+  const todoListdata = useSelector(   // Store data ulasabilmek icin 
+    (state) => state.todos.todoList
+  );
+  return (
+    <>
+      {todoListdata.map((todo) => (
+        <Box key={todo.key}>
+          <Text>{todo.value}<
+
+----------------------------------------------------------------------------------------
+Let see it in action
+Fetch Data from an Api 
+Api den reduxta data cekme islemi 
+
+createAsyncThunk creates 3 types of Actions
+pending
+fullfilled
+rejected
 
 
 
