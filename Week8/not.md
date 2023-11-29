@@ -189,7 +189,6 @@ nanoid redux toolkit icerisinde eklenmis.
 });
 ​
 export const { addTodo } = todoSlice.actions;
-​
 export default todoSlice.reducer;
 
 
