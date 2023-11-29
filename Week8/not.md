@@ -5,13 +5,16 @@ Global State Manager en cok kullanılan en cok tercıh edılen
 What is Redux??
 Redux:GLOBAL bir durum state yonetmek guncellemek icin kullanilan kutuphanedir.
 Uygulamanin bircok bolumunde userlarin kullanici eylemlerine nasil tepki verilecegi ve hangi verilerin gosterilecegini yonetmek icin yardimci olur.
+
+Redux ve Redux Toolkit ihtiyaca gore  cikmistir Datayi yonetememe props thrilling karsilasma bu istegi bircok sayfada atilip tek bir yerden yonetme istegi gibi durumlardan dolayi zaman ve maliyetli bir islemdir.Cok context yapilar icin kullanilmasi tavsiye edilir.
 -----------------------------------------------------------------
 When to Use Redux?
 Ne zaman kullanilir?
 Uygulamanizda bircok yerde ihtiyac duyulan buyuk miktarda applicastion state varsa uygulamanin state varsa kullanilabilir.
 Uygulama durumu zamanla sik sik guncelleniyorsa yada bu durumun guncellemenin mantigini karmasik olabilir karmasik oldugunda kullanilabilir.
 Redux toolkit kucuk olcekli projelerde kullanmak icin verimli degil React stateleri kullanmak daha avantaj.
-Orta yada buyuk olcekli kod tabanina sahipse proje o zaman kullanilir.
+Orta yada buyuk olcekli kod tabanina sahipse proje o zaman kullanilir.Yada bircok kisi tarafindan calisiliyorsa 
+Kucuk uygulamalarda ihtiyac yok ancak buyuk uygulamalarda clean code ile Global State ile her yerden ulasilabilmesi icin 
 -----------------------------------------------------------------
 Redux Before 2020
 2020 den once Redux 
@@ -252,11 +255,81 @@ Fetch Data from an Api
 Api den reduxta data cekme islemi 
 
 createAsyncThunk creates 3 types of Actions
-pending
-fullfilled
-rejected
+
+createAsyncThunk keyword var icerisinde olusturdugu 3 action var
+pending su anda gonderiliyor
+fullfilled veri geldi doldu 
+rejected reddedildi
+
+Redux tarafinda end point istegi atarken createAsyncThunk keywordu kullanilir.
+
+fetchTodos endpointten cekilir export const fetchTodos fonksiyon olusturmus name ismine gore todos/fetchtodo islemi gerceklestirilecek.
+Asenkron olarak 
+
+import {
+  createSlice,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
+import axios from "axios";
+​
+export const fetchTodos = createAsyncThunk(  //
+  "todos/fetchTodos",
+  async () => {
+    const response = await axios.get( //istek atma 
+      "https://eager-supreme-appalachiosaurus.glitch.me/todos" //end point 
+    );
+    return response.data.todoList; //istegi return etme createAsyncThunk ile
+    
+  }
+);
+​
+export const todoSlice = createSlice({
+  name: "todos",
+  initialState: { //initial state datayi isteklerin push edebilmek icin  reducer icerisinde degil extrareducer alaninda  yapiliyor
+
+    todoList: [],
+    status: "idle",
+    error: null,
+  },
+  reducers: {
+    addTodo: {
+      // state.todoList.push(action.payload);
+    },
+  },
+
+  //createAsyncThunk 3 actions syntax kullanimi
+
+  //Bu istegi at direkt fetchTodos gerisini halleder.Refresh edene kadar depolar refresh edildiginde state bosaltir.
+  Redux genel calisma mantiginda CASHLEME islemi yoktur.Redux kendi icerisinde cash islemleri yapabilmek icin kullanabielcegimiz ekstra Third Party islemler mevcut.Data cekilde refresh olsa da kaybolmasin.Kutuphane mevcut kullanmak ihtiyaca gore degisir Recoil Global State Manager var Istek atiliyor o istegi attiktan sonra Global State Manager oldugu icin tum component tum sayfalarin icerisinde kullanilabiliyor sayfayi refresh edilse de kaybolmuyor cunku veriyi bir kere cashleme islemi gerceklestiriyor.Veriyi komple sil veya ne zaman tekrar o veriyi kullanmak istemem bir sey degismistir her zaman ayni veriyi kullanmaya gerek yok onu tetikleme gerekir tetikleyen datayi update edilebilir.Ama sunda kullanimda Cahsleme mantigi yok.
+
+  Kucuk uygulamalarda ihtiyac yok ancak buyuk uygulamalarda clean code ile Global State ile her yerden ulasilabilmesi icin createAsyncThunk kullanim zorunludur.Best pratickslere davranmaya calisildigi noktada en dogru yaklasim bu.
+  Redux ve Redux Toolkit ihtiyaca gore  cikmistir Datayi yonetememe props thrilling karsilasma bu istegi bircok sayfada atilip tek bir yerden yonetme istegi gibi durumlardan dolayi
 
 
 
+  extraReducers: {
+    [fetchTodos.pending]: (state, action) => {
+      state.status = "loading";
+    },
+    [fetchTodos.fulfilled]: (state, action) => {
+      state.status = "succeeded";
+      state.todoList.push(...action.payload);
+    },
+    [fetchTodos.rejected]: (state, action) => {
+      state.status = "failed";
+      state.error = action.error.message;
+    },
+  },
+});
+​
+export const { addTodo } = todoSlice.actions;
+​
+export default todoSlice.reducer;
+createAsyncThunk
+
+useEffect icerisinde dependency olarak dispacte baglanir todo list state ile dataya ulasilir.
+----------------------------------------------------------------------------------------
+AddLoading Error UI
+----------------------------------------------------------------------------------------
 
 
