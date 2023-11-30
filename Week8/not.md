@@ -64,7 +64,7 @@ store ile işlem yapıldıgında herhangi bir sayfa içerisinde durmadan prop pa
 4 katmanlı sayfa oldugunu varsayarsak birinci katmandan dördüncü katmana propları teker teker indiriliyordu iki ara katman prop ile bağımsızdı.
 Store ile birinci katmanda kullandıgımız prop aradaki iki katmanı geçerek en alttaki katmana ulaştırlablecek.
 1.katman veriyi store gönderme 4.companent store gidiliyor istediği bilgiyi alıp çekebilir.Bu şekilde prop passıng ve props drilling önüne geçiriliyor.
-
+-----------------------------------------------------------------
 configureStore()
 store konfigurasyonu islemi gerceklestirir.
 configureStore() key var 1 tane store olusturuluyor store icerisine configureStore() keywordu import edilir todo icin reducer olusturmus olusturacagimiz slice ya da reducer store icerisinde export default configure store icerisine reducer hangi islemleri yapacagimiza gore ornegin todo icin reducer import edilir.
@@ -331,5 +331,3 @@ useEffect icerisinde dependency olarak dispacte baglanir todo list state ile dat
 ----------------------------------------------------------------------------------------
 AddLoading Error UI
 ----------------------------------------------------------------------------------------
-
-
