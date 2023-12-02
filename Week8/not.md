@@ -331,3 +331,6 @@ useEffect icerisinde dependency olarak dispacte baglanir todo list state ile dat
 ----------------------------------------------------------------------------------------
 AddLoading Error UI
 ----------------------------------------------------------------------------------------
+
+
+Eylemi tamamlamak için gereken ek veriler yük alanına iletilir
