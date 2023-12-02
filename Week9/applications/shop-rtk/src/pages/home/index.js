@@ -88,13 +88,7 @@ const Home = () => {
       <Stack direction="row" spacing={3}>
         <Stack
           direction="column"
-          sx={{
-            borderRadius: '4px',
-            background: 'aliceBlue',
-            padding: '20px',
-            boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-            height: 'fit-content',
-          }}
+          
           divider={<Divider orientation="horizontal" flexItem />}
         >
           <Typography variant="h4" color="grey">
